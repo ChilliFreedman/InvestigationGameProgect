@@ -1,0 +1,7 @@
+C:\Users\חילי פרידמן\source\repos\InvestigationGameProgect\InvestigationGameProgect\bin\Debug\InvestigationGameProgect.exe.config
+C:\Users\חילי פרידמן\source\repos\InvestigationGameProgect\InvestigationGameProgect\bin\Debug\InvestigationGameProgect.exe
+C:\Users\חילי פרידמן\source\repos\InvestigationGameProgect\InvestigationGameProgect\bin\Debug\InvestigationGameProgect.pdb
+C:\Users\חילי פרידמן\source\repos\InvestigationGameProgect\InvestigationGameProgect\obj\Debug\InvestigationGameProgect.csproj.AssemblyReference.cache
+C:\Users\חילי פרידמן\source\repos\InvestigationGameProgect\InvestigationGameProgect\obj\Debug\InvestigationGameProgect.csproj.CoreCompileInputs.cache
+C:\Users\חילי פרידמן\source\repos\InvestigationGameProgect\InvestigationGameProgect\obj\Debug\InvestigationGameProgect.exe
+C:\Users\חילי פרידמן\source\repos\InvestigationGameProgect\InvestigationGameProgect\obj\Debug\InvestigationGameProgect.pdb
