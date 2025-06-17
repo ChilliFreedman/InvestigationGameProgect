@@ -9,13 +9,17 @@ namespace InvestigationGameProgect
     internal static class InvestigationManager
     {
        
-        public static List<string> SensorTypes = new List<string> {"Thermal", "Audio"};
+        public static List<string> SensorTypes = new List<string> {"Thermal", "Audio", "Pulse", "Motion" };
         public static ThermalSensor SensorThermal = new ThermalSensor();
         public static AudioSensor SensorAudio = new AudioSensor();
+        public static PulseSensor SensorPulse = new PulseSensor();
+        public static MotionSensor SensorMotion = new MotionSensor();
         public static Dictionary<string, Sensor> DictSensors = new Dictionary<string, Sensor>
         {
             {"Thermal",SensorThermal },
-            {"Audio",SensorAudio }
+            {"Audio",SensorAudio },
+            {"Pulse",SensorPulse },
+            {"Motion",SensorMotion }
         };
         public static IranianAgent Agent1 = new IranianAgent();
 
@@ -23,7 +27,15 @@ namespace InvestigationGameProgect
         {
             if (SensorTypes.Contains(sensorType))
             {
-                Agent1.AttachedSensors.Add(DictSensors[sensorType]);     
+                Agent1.AttachedSensors.Add(DictSensors[sensorType]);
+                DictSensors[sensorType].Activate();
+
+                //foreach (Sensor sensor in Agent1.AttachedSensors)
+                //{
+                //    sensor.Activate();
+                //}
+
+
             }
             else
             {

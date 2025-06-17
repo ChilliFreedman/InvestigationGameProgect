@@ -24,10 +24,9 @@ namespace InvestigationGameProgect
         public List<string> FunRendumToWeaknesses()
         {
             List<string> weaknespush = new List<string>();
+            Random rand = new Random();
             for (int i = 0; i < Rank; i++)
             {
-                
-                Random rand = new Random();
                 int indextype = rand.Next(0, InvestigationManager.SensorTypes.Count);
                 string type = InvestigationManager.SensorTypes[indextype];
                 weaknespush.Add(type);

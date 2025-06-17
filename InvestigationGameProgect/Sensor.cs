@@ -21,9 +21,13 @@ namespace InvestigationGameProgect
         {
             this.Type = "Audio";
         }
+        //public static int counter = 1;
         public override void Activate()
         {
             
+        //    Console.WriteLine($"Audio is activate {counter} times.");
+        //    counter++;
+           
         }
     }
 
@@ -32,6 +36,40 @@ namespace InvestigationGameProgect
         public ThermalSensor() : base()
         {
             this.Type = "Thermal";
+        }
+
+        public override void Activate()
+        {
+            Random rand = new Random();
+            
+            int indexWeaknes = rand.Next(0, InvestigationManager.Agent1.Weaknesses.Count);
+            string Weaknes = InvestigationManager.Agent1.Weaknesses[indexWeaknes];
+            ConsoleUI.PrintThermalsActiv(Weaknes);
+
+
+
+
+        }
+    }
+
+    internal class PulseSensor : Sensor
+    {
+        public PulseSensor() : base()
+        {
+            this.Type = "Pulse";
+        }
+
+        public override void Activate()
+        {
+
+        }
+    }
+
+    internal class MotionSensor : Sensor
+    {
+        public MotionSensor() : base()
+        {
+            this.Type = "Motion";
         }
 
         public override void Activate()

@@ -13,7 +13,7 @@ namespace InvestigationGameProgect
             string sensorType;
             do
             {
-                Console.WriteLine("enter a sensor: Thermal/Audio.");
+                Console.WriteLine("enter a sensor: Thermal/Audio/Pulse/Motion.");
                 sensorType = Console.ReadLine();
 
                 try
@@ -37,7 +37,7 @@ namespace InvestigationGameProgect
                 try
                 {
 
-                    Console.WriteLine($"you hve rigt {InvestigationManager.Agent1.GetMatchCount()}/{InvestigationManager.Agent1.Weaknesses.Count}");
+                    Console.WriteLine($"you have rigt {InvestigationManager.Agent1.GetMatchCount()}/{InvestigationManager.Agent1.Weaknesses.Count}");
          
                 }
                 catch (Exception ex)
@@ -52,6 +52,13 @@ namespace InvestigationGameProgect
         public static void PrintError()
         {
             Console.WriteLine("not aloud sensor");
+        }
+
+
+
+        public static void PrintThermalsActiv(string Weaknes)
+        {
+            Console.WriteLine($"sensor '{Weaknes}' is in a Weaknes sensor");
         }
     }
 }
