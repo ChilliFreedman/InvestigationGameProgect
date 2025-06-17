@@ -7,19 +7,20 @@ using System.Threading.Tasks;
 namespace InvestigationGameProgect
 {
     internal static class ConsoleUI
-    { 
+    {
+        public static string sensorType;
         public static void SetSensorType()
         {
-            string sensorType;
+            
             do
             {
-                Console.WriteLine("enter a sensor: Thermal/Audio/Pulse/Motion.");
+                Console.WriteLine("enter a sensor: Thermal/Audio/Pulse/Motion/Magnetic/Signal/Light.");
                 sensorType = Console.ReadLine();
 
                 try
                 {
 
-                    InvestigationManager.AddSensor(sensorType);
+                    InvestigationManager.AddSensor();
 
                 }
                 catch (Exception ex)
@@ -58,7 +59,12 @@ namespace InvestigationGameProgect
 
         public static void PrintThermalsActiv(string Weaknes)
         {
-            Console.WriteLine($"sensor '{Weaknes}' is in a Weaknes sensor");
+            Console.WriteLine($"thermal sensor rturnd thet  sensor '{Weaknes}' is in the Weaknes list");
+        }
+
+        public static void PrintCorect(string sensor)
+        {
+            Console.WriteLine($"corect!!! sensor {sensor} was tornd an");
         }
     }
 }

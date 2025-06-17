@@ -24,7 +24,7 @@ namespace InvestigationGameProgect
         //public static int counter = 1;
         public override void Activate()
         {
-            
+            ConsoleUI.PrintCorect(Type);
         //    Console.WriteLine($"Audio is activate {counter} times.");
         //    counter++;
            
@@ -40,6 +40,7 @@ namespace InvestigationGameProgect
 
         public override void Activate()
         {
+            ConsoleUI.PrintCorect(Type);
             Random rand = new Random();
             
             int indexWeaknes = rand.Next(0, InvestigationManager.Agent1.Weaknesses.Count);
@@ -61,7 +62,7 @@ namespace InvestigationGameProgect
 
         public override void Activate()
         {
-
+            ConsoleUI.PrintCorect(Type);
         }
     }
 
@@ -74,9 +75,49 @@ namespace InvestigationGameProgect
 
         public override void Activate()
         {
+            ConsoleUI.PrintCorect(Type);
+        }
+    }
 
+    internal class MagneticSensor : Sensor
+    {
+        public MagneticSensor() : base()
+        {
+            this.Type = "Magnetic";
+        }
+
+        public override void Activate()
+        {
+            ConsoleUI.PrintCorect(Type);
+        }
+    }
+
+    internal class SignalSensor : Sensor
+    {
+        public SignalSensor() : base()
+        {
+            this.Type = "Signal";
+        }
+
+        public override void Activate()
+        {
+            ConsoleUI.PrintCorect(Type);
+        }
+    }
+
+    internal class LightSensor : Sensor
+    {
+        public LightSensor() : base()
+        {
+            this.Type = "Light";
+        }
+
+        public override void Activate()
+        {
+            ConsoleUI.PrintCorect(Type);
         }
     }
 
 
+    
 }
