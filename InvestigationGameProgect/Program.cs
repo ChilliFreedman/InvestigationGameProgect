@@ -10,6 +10,7 @@ namespace InvestigationGameProgect
     {
         static void Main(string[] args)
         {
+            ConsoleUI.setagent();
             InvestigationManager.RunTurn();
             //for (int i = 0; i < InvestigationManager.Agent1.Rank; i++)
             //{

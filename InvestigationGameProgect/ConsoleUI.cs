@@ -8,27 +8,97 @@ namespace InvestigationGameProgect
 {
     internal static class ConsoleUI
     {
-        public static string sensorType;
+        public static Sensor sensorType;
+        public static IranianAgent agentName;
+
+        public static void setagent()
+        {
+            string choise;
+            do
+            {
+                Console.WriteLine("enter a type of agent \nfor Foot Soldier press 1." +
+                "\nfor Squad Leader press 2" +
+                "\nfor Senior Commander press 3" +
+                "\nfor Organization Leader press 4 ");
+                choise = Console.ReadLine();
+                switch (choise)
+                {
+                    case "1":
+                        agentName = new IranianAgent();
+                        break;
+
+                    case "2":
+                        agentName = new SquadLeader();
+                        break;
+                    case "3":
+                        agentName = new SeniorCommander();
+                        break;
+                    case "4":
+                        agentName = new OrganizationLeader();
+                        break;
+                    default:
+                        Console.WriteLine("not aloud choise");
+                        break;
+                }
+                
+
+            
+            }
+            while (choise != "1" && choise != "2" && choise != "3" && choise != "4");
+
+
+
+        }
         public static void SetSensorType()
         {
-            
+            string choise2;
             do
             {
                 Console.WriteLine("enter a sensor: Thermal/Audio/Pulse/Motion/Magnetic/Signal/Light.");
-                sensorType = Console.ReadLine();
-
-                try
+                choise2 = Console.ReadLine();
+                switch (choise2)
                 {
+                    case "Thermal":
+                        sensorType = new ThermalSensor();
+                        break;
+                    case "Audio":
+                        sensorType = new AudioSensor();
+                        break;
+                    case "Pulse":
+                        sensorType = new PulseSensor();
+                        break;
+                    case "Motion":
+                        sensorType = new MotionSensor();
+                        break;
 
-                    InvestigationManager.AddSensor();
+                    case "Magnetic":
+                        sensorType = new MagneticSensor();
+                        break;
+                    case "Signal":
+                        sensorType = new SignalSensor();
+                        break;
 
+                    case "Light":
+                        sensorType = new LightSensor();
+                        break;
+
+                    default:
+                        Console.WriteLine("Unknown sensor type");
+                        break;
                 }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex.Message + "1");
-                }
+
+                //try
+                //{
+
+                //    InvestigationManager.AddSensor(agentName);
+
+                //}
+                //catch (Exception ex)
+                //{
+                //    Console.WriteLine(ex.Message + "1");
+                //}
             }
-            while (!InvestigationManager.SensorTypes.Contains(sensorType));
+            while (!InvestigationManager.SensorTypes.Contains(choise2));
             
             
         }
@@ -38,7 +108,7 @@ namespace InvestigationGameProgect
                 try
                 {
 
-                    Console.WriteLine($"you have rigt {InvestigationManager.Agent1.GetMatchCount()}/{InvestigationManager.Agent1.Weaknesses.Count}");
+                    Console.WriteLine($"you have rigt {agentName.GetMatchCount()}/{agentName.Weaknesses.Count}");
          
                 }
                 catch (Exception ex)

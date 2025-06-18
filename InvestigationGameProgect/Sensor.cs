@@ -11,6 +11,8 @@ namespace InvestigationGameProgect
     {
         public string Type { get; protected set; }
         
+        public int PublicCounter { get; set; }
+        public int PrivatCounter { get; set; } 
         public abstract void Activate();
         
     }
@@ -21,12 +23,11 @@ namespace InvestigationGameProgect
         {
             this.Type = "Audio";
         }
-        //public static int counter = 1;
+        
         public override void Activate()
         {
             ConsoleUI.PrintCorect(Type);
-        //    Console.WriteLine($"Audio is activate {counter} times.");
-        //    counter++;
+        
            
         }
     }
@@ -41,11 +42,16 @@ namespace InvestigationGameProgect
         public override void Activate()
         {
             ConsoleUI.PrintCorect(Type);
-            Random rand = new Random();
+            //if (this.PrivatCounter == 0)
+            //{
+                Random rand = new Random();
+
+                int indexWeaknes = rand.Next(0, ConsoleUI.agentName.Weaknesses.Count);
+                string Weaknes = ConsoleUI.agentName.Weaknesses[indexWeaknes];
+                ConsoleUI.PrintThermalsActiv(Weaknes);
+                //this.PrivatCounter++;
+            //}
             
-            int indexWeaknes = rand.Next(0, InvestigationManager.Agent1.Weaknesses.Count);
-            string Weaknes = InvestigationManager.Agent1.Weaknesses[indexWeaknes];
-            ConsoleUI.PrintThermalsActiv(Weaknes);
 
 
 
@@ -55,13 +61,21 @@ namespace InvestigationGameProgect
 
     internal class PulseSensor : Sensor
     {
+
         public PulseSensor() : base()
         {
             this.Type = "Pulse";
+            this.PrivatCounter = 0;
         }
-
+        
         public override void Activate()
         {
+            //Console.WriteLine($"Pulse is activate {Counter} times.");
+            if (this.PrivatCounter == 0)
+            {
+                this.PrivatCounter = 1;
+            }
+            
             ConsoleUI.PrintCorect(Type);
         }
     }
