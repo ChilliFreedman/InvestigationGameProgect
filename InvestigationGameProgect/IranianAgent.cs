@@ -40,22 +40,14 @@ namespace InvestigationGameProgect
         }
         public int GetMatchCount()
         {
-            int counter = 0;
-            List<string> matches = new List<string>(Weaknesses);
           
-            for (int i = 0;i <  AttachedSensors.Count; i++)
+            List<string> matches = new List<string>(Weaknesses);
+            foreach (Sensor sensor in AttachedSensors)
             {
-                for (int j = 0; j < matches.Count; j++)
-                {
-                    if ( AttachedSensors[i].Type == matches[j])
-                    {
-                        counter++;
-                        matches.RemoveAt(j);
-                        break;
-                    }
-                }
+                matches.Remove(sensor.Type);
             }
-            return counter;
+            return Weaknesses.Count - matches.Count;
+            
         }
         
     }
