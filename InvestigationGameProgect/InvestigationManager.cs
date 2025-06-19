@@ -43,15 +43,15 @@ namespace InvestigationGameProgect
         {
             if (SensorTypes.Contains(ConsoleUI.sensorType.Type))
             {
+                //מוסיף את מה הסנסור שהמשתמש הכניס לרשימת ההצמדות
                 ConsoleUI.agentName.AttachedSensors.Add(ConsoleUI.sensorType);
                 counter++;
+                //קורא לפונקציה שתוקפת כל 3 תורות רק אם יש אישהו סנסור מופעל
                 if (ConsoleUI.agentName.Rank != 2 && counter % 3 == 0 && ConsoleUI.agentName.GetMatchCount() > 0)
                 {
                     AttekBack();
                 }
-                
-                
-                //PulseSensor sensor1 = new PulseSensor();
+                //מבטל את הסנסור פולס כל 4 תורות
                 for (int i = 0; i < ConsoleUI.agentName.AttachedSensors.Count; i++)
                 {
                     if (ConsoleUI.agentName.AttachedSensors[i].Type == "Pulse" && ConsoleUI.agentName.AttachedSensors[i].PrivatCounter > 0)
@@ -60,12 +60,9 @@ namespace InvestigationGameProgect
                         Console.WriteLine(ConsoleUI.agentName.AttachedSensors[i].PrivatCounter);
                         if (ConsoleUI.agentName.AttachedSensors[i].PrivatCounter == 4)
                         {
-                            ConsoleUI.agentName.AttachedSensors[i].PrivatCounter = 0;
                             ConsoleUI.agentName.AttachedSensors.RemoveAt(i);
                         }
-
                     }
-           
                 }
 
             }
@@ -82,7 +79,7 @@ namespace InvestigationGameProgect
             {
                 ConsoleUI.SetSensorType();
                 AddSensor();
-
+                //מפעיל את האקיבייט רק אם יש ברשימה של הוויקנסז
                 if (ConsoleUI.agentName.Weaknesses.Contains(ConsoleUI.sensorType.Type))
                 {
                     ConsoleUI.sensorType.Activate();
@@ -90,6 +87,7 @@ namespace InvestigationGameProgect
                 }     
  
                 ConsoleUI.PrintTheResult();
+                //קוראת לפונקציה שמאפסת כל 10 תורות
                 if (counter % 10 == 0)
                 {
                     Clear10();
