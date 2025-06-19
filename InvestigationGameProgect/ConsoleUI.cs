@@ -8,9 +8,10 @@ namespace InvestigationGameProgect
 {
     internal static class ConsoleUI
     {
+        //יקבל את הסנסור שהמשתמש יכניס לכל המשחק
         public static Sensor sensorType;
+        //יקבל את הסוכן שהמשתמש יכניס לכל המשחק
         public static IranianAgent agentName;
-
         public static void setagent()
         {
             string choise;
@@ -26,7 +27,6 @@ namespace InvestigationGameProgect
                     case "1":
                         agentName = new IranianAgent();
                         break;
-
                     case "2":
                         agentName = new SquadLeader();
                         break;
@@ -40,14 +40,9 @@ namespace InvestigationGameProgect
                         Console.WriteLine("not aloud choise");
                         break;
                 }
-                
-
-            
+                            
             }
             while (choise != "1" && choise != "2" && choise != "3" && choise != "4");
-
-
-
         }
         public static void SetSensorType()
         {
@@ -87,16 +82,6 @@ namespace InvestigationGameProgect
                         break;
                 }
 
-                //try
-                //{
-
-                //    InvestigationManager.AddSensor(agentName);
-
-                //}
-                //catch (Exception ex)
-                //{
-                //    Console.WriteLine(ex.Message + "1");
-                //}
             }
             while (!InvestigationManager.SensorTypes.Contains(choise2));
             
@@ -115,23 +100,15 @@ namespace InvestigationGameProgect
                 {
                     Console.WriteLine(ex.Message + "2");
                 }
-           
-
-
-
         }
         public static void PrintError()
         {
             Console.WriteLine("not aloud sensor");
         }
-
-
-
         public static void PrintThermalsActiv(string Weaknes)
         {
             Console.WriteLine($"thermal sensor rturnd thet  sensor '{Weaknes}' is in the Weaknes list");
         }
-
         public static void PrintCorect(string sensor)
         {
             Console.WriteLine($"corect!!! sensor {sensor} was tornd an");

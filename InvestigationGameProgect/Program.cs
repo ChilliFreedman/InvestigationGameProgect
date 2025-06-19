@@ -12,10 +12,7 @@ namespace InvestigationGameProgect
         {
             ConsoleUI.setagent();
             InvestigationManager.RunTurn();
-            //for (int i = 0; i < InvestigationManager.Agent1.Rank; i++)
-            //{
-            //    Console.WriteLine(InvestigationManager.Agent1.Weaknesses[i]);
-            //}
+          
         }
     }
 }

@@ -28,7 +28,6 @@ namespace InvestigationGameProgect
         public List<string> FunRendumToWeaknesses()
         {
             List<string> weaknespush = new List<string>();
-            //weaknespush.Add(new PulseSensor().Type);
             Random rand = new Random();
             for (int i = 0; i < Rank; i++)
             {
@@ -62,10 +61,9 @@ namespace InvestigationGameProgect
     }
     internal class SquadLeader : IranianAgent
     {
-        //public int Attack {  get; set; }
+
         public SquadLeader() : base(4)
         {
-            //this.Attack = 1;
         }
         public override int Attack()
         {
@@ -77,10 +75,8 @@ namespace InvestigationGameProgect
     }
     internal class SeniorCommander : IranianAgent
     {
-        //public int Attack { get; set; }
         public SeniorCommander() : base(6)
         {
-            //this.Attack = 2;
         }
         public override int Attack()
         {
@@ -89,10 +85,8 @@ namespace InvestigationGameProgect
     }
     internal class OrganizationLeader : IranianAgent
     {
-        //public int Attack { get; set; }
         public OrganizationLeader() : base(8)
         {
-            //this.Attack = 1;
         }
         public override int Attack()
         {

@@ -70,7 +70,6 @@ namespace InvestigationGameProgect
         
         public override void Activate()
         {
-            //Console.WriteLine($"Pulse is activate {Counter} times.");
             if (this.PrivatCounter == 0)
             {
                 this.PrivatCounter = 1;
